@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Predict Final Grades</h1>
+        <form action="/predict" method="POST" class="mt-4">
+            <div class="mb-3">
+                <label for="attendanceRate" class="form-label"></label>
+                <input type="number" step="0.01" id="attendanceRate" name="attendanceRate" class="form-control" placeholder="Attendance Rate (%)" required>
+            </div>
+            <div class="mb-3">
+                <label for="studyHours" class="form-label"></label>
+                <input type="number" id="studyHours" name="studyHours" class="form-control"placeholder="Study Hours per Week" required>
+            </div>
+            <div class="mb-3">
+                <label for="familyIncome" class="form-label"></label>
+                <input type="number" id="familyIncome" name="familyIncome" class="form-control" placeholder="Family Income (₹)" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
